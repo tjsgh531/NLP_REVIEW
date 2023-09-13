@@ -1,0 +1,23 @@
+1. 데이터 전처리
+    1-1. train.csv 파일을 가져오시오. 
+    1-2. 결측치 처리 하시오.
+    (이때 Cabin은 열 삭제, Age의 결측치는 중앙값, Embarked의 결측치는 최빈값으로 대체)
+    1-3. 모든 데이터를 숫자 데이터 타입으로 바꾸시오.(Sex, Embarked)
+    1-4. min_max normalize를 사용하여 모든 feature를 normalize하시오.(Sex, Embarked, Survived 제외)
+
+2. 데이터 나누기
+    2-1 데이터를 섞으시오.
+    2-2 섞인 데이터를 8:2 비율로 train과 test data로 나누시오.
+    2-3 나눈 데이터들을 텐서화
+
+3. 모델링, Cost 함수, Optimizer(최적화)  
+    3-1 random한 weight와 bias로 초기화 된 Logistic 모델을 생성
+    3-2 Logistic의 loss 공식을 이용하여 cost 함수를 선언하기
+    3-3 SGD Optimizer 선언
+
+4. 학습
+    4-1 1000번 학습, 매 학습 마다 모델의 weight 값과 bias 값을 저장
+
+5. 평가
+    5-1 accuracy 평가 
+    

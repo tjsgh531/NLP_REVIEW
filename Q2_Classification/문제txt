@@ -1,0 +1,23 @@
+1. 데이터 생성
+    1-1 make_blobs 를 사용해서 train data 200개 valid data, test data 50개씩 생성
+    (이때, [1, 1], [1, -1], [-1, 1], [-1, -1] 4개의 좌표 중심으로 표편 0.3 데이터를 뽑음.)
+    (라벨링은 0, 1 로만 구현)
+
+    1-2 Dataset을 상속받은 클래스를 생성
+    1-3 DataLoader 이용해서 batch data t생성
+
+2. 모델
+    2-1 모델 생성(MLP classification)
+    (이때 dropout, normalization, initializtion 구현)
+
+3. Training & valid
+    3-1 optimizer 구현
+    3-2 cost_function 구현
+    3-3 20epoch 만큼 훈련(이때, train_loss_history에 저장)
+    3-4 valid_data로 검사 (이때, valid_loss_history에 저장 & 가장 작은 loss및 best_model 저장)
+
+4. Learning Curve
+    4-1 train_loss_history와 valid_loss_history를 통해 Learning Curve 그리기
+
+5. Evaluation
+    5-1 저장해둔 best model을 통해 accuracy 구하기

@@ -1,0 +1,32 @@
+1. Tokenization(토큰화)
+    1-1 ratings_train.txt 파일 가져오기
+    1-2 결측치 처리(document 열의 값이 null인 행 없애기)
+    1-3 vocab_cnt_dict 만들기(key 값 = vocab, value 값 = count)
+    1-4 사용된 개수를 기준으로 내림차순
+    1-5 사용된 개수가 평균 이상인 vocab만 남기기
+    1-6 [UNK], [PAD] 토큰 추가
+    1-7 Tokenizer 클래스 생성
+
+2. 데이터 생성
+    2-1 train / valid / test dataframe 생성
+
+    2-2 Dataset 클래스 상속받은 NSMDataset 클래스 생성
+        - data_df와 tokenizer를 파라미터로 받은 __init__ 함수
+        - 데이터의 길이를 알려주는 __len__함수
+        - 원본 문자열인 doc과 tokenizer를 통해 얻은 doc_ids 리스트와 label(0, 1)값을
+        가지고 있는 객체를 반환하는 __getitem__함수
+    
+    2-3 collate_fn 함수 구현
+
+    2-4 DataLoader를 이용해서 (train, valid, test) batch data 생성
+        - batch_size = 128
+
+3. 모델 생성
+    3-1 CBOW 모델 선언
+        - vocab_size, embed_dim을 파라미터로 받는 __init__ 함수
+        - 문장(x:torch.tensor)을 파라미터로 받는 forward 함수
+    
+    3-2 NN Classifier 구현
+        - sr_model, output_dim, vocab_size, embed_dim, **kwargs을 파라미터로 받는 __init__ 함수
+        - 문장(x:torch.tensor)을 파라미터로 받는 forward 함수
+         
