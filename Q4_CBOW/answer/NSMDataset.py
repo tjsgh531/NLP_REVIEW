@@ -19,6 +19,7 @@ class NSMDataset(Dataset):
         sample['label'] = int(sample_raw["label"])
         assert sample['label'] in set([0, 1])
 
+
         if self.tokenizer is not None:
             sample['doc_ids'] = self.tokenizer(sample['doc'])
 

@@ -30,3 +30,15 @@
         - sr_model, output_dim, vocab_size, embed_dim, **kwargs을 파라미터로 받는 __init__ 함수
         - 문장(x:torch.tensor)을 파라미터로 받는 forward 함수
          
+4. Training
+    4-1 GPU를 사용하도록 model 설정
+    4-2 optimizer & cost_func 선언
+    4-3 20epoch 만큼 훈련 (valid_loss_history, train_loss_history 담아두기)
+
+5. Learning Curve
+    5-1 loss_history를 파라미터로 받아서 100개씩 잘라 평균값을 저장한 list를 반환하는 함수 구현
+    5-2 두 loss_history를 ploting
+
+6. test
+    6-1 test data 가져오기
+    6-2 test data 

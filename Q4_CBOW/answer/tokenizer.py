@@ -28,3 +28,5 @@ class Tokenizer:
             token_ids = token_ids[:self.max_padding]
             add_cnt = self.max_padding - len(token_ids)
             token_ids.extend([self.pad_token_idx] * add_cnt)
+        
+        return token_ids
